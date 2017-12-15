@@ -13,8 +13,11 @@ J = 0;
 % Instructions: Compute the cost of a particular choice of theta
 %               You should set J to the cost.
 
-
-
+for i=1:length(X)
+	item = (sum(X(i, :) * theta) - y(i))^2;
+	J = J + item;
+end
+J = J/length(X)/2;
 
 
 % =========================================================================
