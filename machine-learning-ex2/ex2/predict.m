@@ -16,6 +16,9 @@ p = zeros(m, 1);
 %
 
 
+result = sigmoid(X * theta);
+p=[result >= 0.5];
+
 
 
 
