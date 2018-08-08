@@ -36,6 +36,25 @@ grad = zeros(size(theta));
 %           grad = grad + YOUR_CODE_HERE (using the temp variable)
 %
 
+[theta_m, theta_n] = size(theta);
+theta0 = theta;
+theta0(1, :) = zeros(1, theta_n);
+
+[m, n] = size(X);
+
+h = sigmoid(X * theta);
+
+y1 = transpose(y);
+
+J = (-y1 * log(h) - (1 - y1) * log(1 - h) + lambda * sum(theta0.^2) / 2) / m;
+grad = (transpose(X) * (h - y) + lambda * theta0) / m; 
+
+%printf("\n%d\n", theta0);
+
+
+
+
+
 
 
 
