@@ -23,7 +23,14 @@ p = zeros(size(X, 1), 1);
 
 
 
+X = [ones(m, 1) X];
+a2 = sigmoid(X * Theta1');
+m2 = size(a2, 1);
+a2 = [ones(m2, 1) a2];
+a3 = a2 * Theta2';
+[x, p] = max(sigmoid(a3), [], 2); 
 
+%printf("\n%f\n", size(a3));
 
 
 
